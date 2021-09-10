@@ -1,6 +1,6 @@
 <?php
 /**
-* @package wptodo
+* @package wpWasiAdmin
 */
 /*
 Plugin Name: WP To Do
@@ -10,7 +10,7 @@ Version:1.2.2
 Author: Delower
 Author URI: https://delower.me
 License: GPLv2 or later
-Text Domain: wptodo
+Text Domain: wpWasiAdmin
 */
 /*
 This program is free software; you can redistribute it and/or
@@ -37,15 +37,15 @@ if(file_exists(dirname(__FILE__).'/vendor/autoload.php')){
 }
 
 //activate plugin
-function activate_wptodo(){
+function activate_wpWasiAdmin(){
 	\Inc\Base\Activate::activate();
 }
-register_activation_hook( __FILE__, 'activate_wptodo' );
+register_activation_hook( __FILE__, 'activate_wpWasiAdmin' );
 //deactivate plugin
-function deactivate_wptodo(){
+function deactivate_wpWasiAdmin(){
 	\Inc\Base\Deactivate::deactivate();
 }
-register_deactivation_hook( __FILE__, 'deactivate_wptodo' );
+register_deactivation_hook( __FILE__, 'deactivate_wpWasiAdmin' );
 //instantiate classes
 if( class_exists( 'Inc\\Init' ) ){
 	\Inc\Init::register_services();

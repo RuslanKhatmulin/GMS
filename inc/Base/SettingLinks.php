@@ -1,6 +1,6 @@
 <?php
 /**
-* @package wptodo
+* @package wpWasiAdmin
 */
 namespace Inc\Base;
 
@@ -15,7 +15,7 @@ class SettingLinks extends BaseController
 
 	public function settings_link($links){
 		//add custom setting link
-		$settings_link = '<a href="admin.php?page=wptodo_settings">Settings</a>';
+		$settings_link = '<a href="admin.php?page=wpWasiAdmin_settings">Settings</a>';
 		array_push($links, $settings_link);
 		return $links;
 	}

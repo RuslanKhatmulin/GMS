@@ -1,6 +1,6 @@
 <?php
 /**
-* @package wptodo
+* @package wpWasiAdmin
 */
 namespace Inc\Api;
 

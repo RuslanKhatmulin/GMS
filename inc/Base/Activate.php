@@ -1,11 +1,11 @@
 <?php
 /**
-* @package wptodo
+* @package wpWasiAdmin
 */
 namespace Inc\Base;
 class Activate{
 	public static function activate(){
 		flush_rewrite_rules();
-		Model::wptodo_install();
+		Model::wpWasiAdmin_install();
 	}
 }
