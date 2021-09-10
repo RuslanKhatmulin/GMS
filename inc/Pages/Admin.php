@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @package wpWasiAdmin
+ * @package wptodo
  */
 
 namespace Inc\Pages;
@@ -19,7 +19,7 @@ class Admin extends BaseController
 	public function __construct()
 	{
 		$this->settings = new SettingsApi();
-		add_shortcode('wp-todo', array($this, 'wpWasiAdmin_short_main'));
+		add_shortcode('wp-todo', array($this, 'wptodo_short_main'));
 	}
 
 	public function register()
@@ -28,11 +28,11 @@ class Admin extends BaseController
 		$this->pages = array(
 
 			array(
-				'page_title' => __('WP To Do', 'wpWasiAdmin'),
-				'menu_title' => __('WP To Do', 'wpWasiAdmin'),
+				'page_title' => __('WP To Do', 'wptodo'),
+				'menu_title' => __('WP To Do', 'wptodo'),
 				'capability' => 'edit_posts',
 				'menu_slug' => 'wp-todo',
-				'callback' =>  array($this, 'wpWasiAdmin_manage'),
+				'callback' =>  array($this, 'wptodo_manage'),
 				'icon_url' =>  'dashicons-editor-ol',
 				'position' =>  5
 			)
@@ -42,25 +42,25 @@ class Admin extends BaseController
 		$this->subpages = array(
 			array(
 				'parent_slug' => 'wp-todo',
-				'page_title' => __('Settings', 'wpWasiAdmin'),
-				'menu_title' => __('Settings', 'wpWasiAdmin'),
+				'page_title' => __('Settings', 'wptodo'),
+				'menu_title' => __('Settings', 'wptodo'),
 				'capability' => 'manage_options',
-				'menu_slug' =>  'wpWasiAdmin_settings',
-				'function' =>  array($this, 'wpWasiAdmin_settings')
+				'menu_slug' =>  'wptodo_settings',
+				'function' =>  array($this, 'wptodo_settings')
 			)
 		);
 		$this->settings->AddPage($this->pages)->register();
 		$this->settings->AddSubPage($this->subpages)->register();
 	}
 
-	public function wpWasiAdmin_manage()
+	public function wptodo_manage()
 	{
-		Model::wpWasiAdmin_manage();
+		Model::wptodo_manage();
 	}
 
-	public function wpWasiAdmin_settings()
+	public function wptodo_settings()
 	{
-		Model::wpWasiAdmin_settings();
+		Model::wptodo_settings();
 	}
 
 	public static function get_role()
@@ -78,7 +78,7 @@ class Admin extends BaseController
 		return $current_user->ID;
 	}
 
-	public static function wpWasiAdmin_add_form()
+	public static function wptodo_add_form()
 	{
 		$role = self::get_role();
 		if ($role == 'administrator' || $role == 'editor') {
@@ -88,7 +88,7 @@ class Admin extends BaseController
 		}
 	}
 
-	public static function wpWasiAdmin_add_button()
+	public static function wptodo_add_button()
 	{
 		$role = self::get_role();
 		if ($role == 'administrator' || $role == 'editor') {
@@ -96,7 +96,7 @@ class Admin extends BaseController
 		}
 	}
 
-	public static function wpWasiAdmin_delete_button($delete)
+	public static function wptodo_delete_button($delete)
 	{
 		$role = self::get_role();
 		if ($role == 'administrator') {
@@ -104,13 +104,13 @@ class Admin extends BaseController
 		}
 	}
 
-	public function wpWasiAdmin_short_main()
+	public function wptodo_short_main()
 	{
-		return Model::wpWasiAdmin_manage();
+		return Model::wptodo_manage();
 	}
 
 	// redirect to tasks
-	public static function wpWasiAdmin_cancel()
+	public static function wptodo_cancel()
 	{
 		if (isset($_POST['cancel'])) {
 			echo '<script>window.location.href="?page=wp-todo"</script>';
@@ -118,7 +118,7 @@ class Admin extends BaseController
 	}
 
 	//countdown timer
-	public static function wpWasiAdmin_countdown_timer($item, $status)
+	public static function wptodo_countdown_timer($item, $status)
 	{
 		$now = date('Y-m-d H:i:s');
 		$deadline = $item;

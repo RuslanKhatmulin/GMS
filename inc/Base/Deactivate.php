@@ -1,6 +1,6 @@
 <?php
 /**
-*@package wpWasi
+*@package wptodo
 */
 namespace Inc\Base;
 class Deactivate{
