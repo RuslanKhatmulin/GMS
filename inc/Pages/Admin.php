@@ -28,8 +28,8 @@ class Admin extends BaseController
 		$this->pages = array(
 
 			array(
-				'page_title' => __('WP To Do', 'wptodo'),
-				'menu_title' => __('WP To Do', 'wptodo'),
+				'page_title' => __('Wasi Admin', 'wptodo'),
+				'menu_title' => __('Wasi Admin', 'wptodo'),
 				'capability' => 'edit_posts',
 				'menu_slug' => 'wp-todo',
 				'callback' =>  array($this, 'wptodo_manage'),
@@ -38,19 +38,7 @@ class Admin extends BaseController
 			)
 
 		);
-
-		$this->subpages = array(
-			array(
-				'parent_slug' => 'wp-todo',
-				'page_title' => __('Settings', 'wptodo'),
-				'menu_title' => __('Settings', 'wptodo'),
-				'capability' => 'manage_options',
-				'menu_slug' =>  'wptodo_settings',
-				'function' =>  array($this, 'wptodo_settings')
-			)
-		);
 		$this->settings->AddPage($this->pages)->register();
-		$this->settings->AddSubPage($this->subpages)->register();
 	}
 
 	public function wptodo_manage()

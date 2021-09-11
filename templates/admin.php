@@ -1,6 +1,6 @@
 	<div class="wrap">
 		<br>
-		<h2 style="text-align: center"><?php _e("To Do Management", 'wptodo'); ?></h2>
+		<h2 style="text-align: center"><?php _e("Wasi Admin", 'wptodo'); ?></h2>
 		<br>
 		<?php
 		\Inc\Pages\Admin::wptodo_add_button();
@@ -8,15 +8,9 @@
 		<table id="todo" class="display" style="width:100%">
 			<thead>
 				<tr>
-					<th>ID</th>
-					<th>Title</th>
-					<th>Submitter</th>
-					<th>Asigned</th>
-					<th>Added</th>
-					<th>Deadline</th>
-					<th>Status</th>
-					<th>Priority</th>
-					<th>Notify</th>
+					<th>Photo</th>
+					<th>name</th>
+					<th>state</th>
 				</tr>
 			</thead>
 			<tbody>

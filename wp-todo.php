@@ -3,9 +3,9 @@
 * @package wptodo
 */
 /*
-Plugin Name: WP To Do
+Plugin Name: Wasi Admin
 Plugin URI: https://delower.me/wp-todo/
-Description: A full featured plugin for creating and managing a "to do" list.
+Description: 
 Version:1.2.2
 Author: Delower
 Author URI: https://delower.me
